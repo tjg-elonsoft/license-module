@@ -19,13 +19,19 @@ public class LicenseMachineTest{
     private static Log logger = LogFactory.getLog(LicenseMachineTest.class);
     private static String PUBLIC_KEY_PATH = "./key-file/license-pubkey.der";
     private static String PRIVATE_KEY_PATH = "./key-file/license-privkey.der";
-    private static String LICENSE_PATH = "./license-file/test_license";
+    private static String LICENSE_PATH = "./license-file/p2p_license";
     private static License license;
 
     @BeforeClass
     public static void setUp() {
-        license = new License(Arrays.asList(PolicyUtil.getHostName()), Arrays.asList("A4-83-E7-C1-52-3A","F2-8A-B2-F6-08-4D","AC-DE-48-00-11-22","A4-83-E7-C1-52-3A"), LocalDate.now());
+        license = new License(Arrays.asList(PolicyUtil.getHostName()), Arrays.asList("A4-83-E7-C1-52-3A","F2-8A-B2-F6-08-4D","AC-DE-48-00-11-22","A4-83-E7-C1-52-3A"),
+                LocalDate.now().plusYears(1));
     }
+
+    /**
+     * 라이센스 파일 발급
+     * @throws Exception
+     */
     @Ignore
     @Test
     public void testIssueLicenseFile() throws Exception {

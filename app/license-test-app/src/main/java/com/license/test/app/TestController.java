@@ -14,7 +14,7 @@ public class TestController {
     @GetMapping
     public void test() throws IOException {
         try {
-            LicenseCheckResult result = LicenseMachine.verify("./test_license", "./license-key.der");
+            LicenseCheckResult result = LicenseMachine.verify("./p2p_license", "./license-key.der");
             System.out.println(result.toString());
         } catch (Exception e) {
             e.printStackTrace();
