@@ -1,0 +1,7 @@
+rootProject.name = 'license-module'
+include 'module:license-app'
+findProject(':module:license-app')?.name = 'license-app'
+include 'module:license-machine'
+findProject(':module:license-machine')?.name = 'license-machine'
+include 'app:license-test-app'
+findProject(':app:license-test-app')?.name = 'license-test-app'
