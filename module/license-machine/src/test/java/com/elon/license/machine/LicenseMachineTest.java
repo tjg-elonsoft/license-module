@@ -25,7 +25,7 @@ public class LicenseMachineTest{
     @BeforeClass
     public static void setUp() {
         license = new License(Arrays.asList(PolicyUtil.getHostName()), Arrays.asList("A4-83-E7-C1-52-3B"),
-                LocalDate.now().minusDays(1));
+                LocalDate.now().plusMonths(14));
     }
 
     /**
