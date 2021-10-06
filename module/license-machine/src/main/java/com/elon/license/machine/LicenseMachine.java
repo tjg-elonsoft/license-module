@@ -111,6 +111,10 @@ public class LicenseMachine {
             String curHostName = PolicyUtil.getHostName();
             List<String> curMacAddress = PolicyUtil.getLocalMacAddresses();
             // 현재 접속한 시스템의 호스트 정보가 라이센스에 등록되어있지 않다면 검증 실패
+
+            System.out.println(curHostName);
+            System.out.println(curMacAddress);
+
             if (!hostName.contains(curHostName)) {
                 return false;
             }

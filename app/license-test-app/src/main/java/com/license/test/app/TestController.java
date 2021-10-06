@@ -19,7 +19,7 @@ public class TestController {
         try {
 
             String path = new FileSystemResource("").getFile().getAbsolutePath()+"/app/license-test-app/";
-            System.out.println();
+            System.out.println(path);
             LicenseCheckResult result = LicenseMachine.verify(path + "p2p_license", path +  "license-key.der");
             System.out.println(result.toString());
         } catch (Exception e) {
@@ -29,7 +29,8 @@ public class TestController {
     @CrossOrigin
     @GetMapping("/test")
     public Map<String , String> testApi() throws IOException, InterruptedException {
-        Thread.sleep(2000);
+        test();
+//        Thread.sleep(2000);
         Map<String , String> result = new HashMap<>();
         result.put("status", "true");
         result.put("value", "1500");
